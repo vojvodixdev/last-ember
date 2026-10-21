@@ -1,7 +1,14 @@
 # Last Ember
 
-Website for Last Ember, a late-night burger bar in Belgrade (open Tue to Sun, 20:00 to 03:00).
+Website for Last Ember, a fictional late-night burger bar in Belgrade (open Tue to Sun, 20:00 to 03:00).
 Plain HTML, CSS and JavaScript. No build step, no frameworks, no server needed.
+
+**[Open the live site](https://vojvodixdev.github.io/last-ember/)**
+
+<p>
+  <img src="docs/desktop.webp" alt="Last Ember home page with the burger hero and opening status" width="72%">
+  <img src="docs/mobile.webp" alt="Last Ember on a phone" width="24%">
+</p>
 
 ## Folder structure
 
@@ -67,10 +74,15 @@ Simulated (there is no backend):
 ## Putting it online for free
 
 - **Netlify**: drag the whole `last-ember` folder onto https://app.netlify.com/drop
-- **GitHub Pages**: push the folder to a repository, then Settings → Pages → deploy from the main branch
+- **GitHub Pages** (how the live site is published): the workflow in `.github/workflows/pages.yml` deploys the site on every push to `main`. In the repository settings choose **Pages → Source: GitHub Actions**.
 - **Vercel** or **Cloudflare Pages**: import the folder, no build command, output directory `.`
 
 ## Notes
 
 - Fonts load from Google Fonts (Big Shoulders Display, Instrument Sans, IBM Plex Mono). Without internet the page falls back to system fonts.
 - The brand, people, reviews and press mentions are fictional placeholders. Replace them before using the site for a real business.
+- The page carries `noindex` so the fictional restaurant does not show up in search results. Remove it for a real launch.
+
+## License
+
+MIT © 2026 Nikola Vojvodić
