@@ -46,7 +46,7 @@ python3 -m http.server 8000
 | Any text, in either language | `js/translations.js`. Each entry is `["English", "Srpski"]`. |
 | Dishes, prices, allergens, extras | `js/app.js`, the `MENU`, `EXTRAS` and `COMBOS` lists |
 | Weekly specials | `js/app.js`, the `SPECIALS` list (0 = Sunday, 1 = Monday...) |
-| FAQ and legal pages | `js/app.js`, the `FAQ` and `LEGAL` lists |
+| Legal pages | `js/app.js`, the `LEGAL` list |
 | Promo codes | `js/app.js`, `PROMOS` (now `EMBER10`, `NIGHT15`, `FIRST20`) |
 | Delivery neighbourhoods | `js/app.js`, `IN_ZONE` and `NEAR` |
 | Opening hours logic | `js/app.js`, `isOpenAt()` and `nextOpening()` |
@@ -62,12 +62,12 @@ Works fully in the browser:
 - Menu with categories, search, filters, dish details, allergens and extras
 - Cart: quantities, extras, pickup or delivery, delivery fee (free over 2,000 RSD), promo codes, tip, time slots and pre-ordering when closed, saved between visits
 - Order confirmation styled as a kitchen ticket, with status steps
-- Table booking (Mondays blocked), loyalty club sign-up, contact form, newsletter
+- Table booking (Mondays blocked) and a contact form
 - Delivery area check, live open/closed status, today highlighted in hours and specials
-- Gallery with full-screen view, cookie notice, English and Serbian
+- English and Serbian
 
 Simulated (there is no backend):
-- Orders, bookings, messages and sign-ups are not sent anywhere. Each form has a
+- Orders, bookings and messages are not sent anywhere. Each form has a
   `submit` or `click` handler in `js/app.js` that currently shows a success message.
   To make them real, send the data from those handlers to your own API, a form
   service (Formspree, Netlify Forms, Basin) or an ordering system.
@@ -81,7 +81,7 @@ Simulated (there is no backend):
 ## Notes
 
 - Fonts load from Google Fonts (Big Shoulders Display, Instrument Sans, IBM Plex Mono). Without internet the page falls back to system fonts.
-- The brand, people, reviews and press mentions are fictional placeholders. Replace them before using the site for a real business.
+- The brand, menu and address are fictional placeholders. Replace them before using the site for a real business.
 - The page carries `noindex` so the fictional restaurant does not show up in search results. Remove it for a real launch.
 
 ## License

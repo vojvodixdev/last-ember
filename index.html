@@ -58,7 +58,6 @@
       <a href="#specials" data-i="nav_deals">Deals</a>
       <a href="#story" class="opt" data-i="nav_story">Story</a>
       <a href="#book" data-i="nav_book">Book a table</a>
-      <a href="#events" class="opt" data-i="nav_events">Events</a>
       <a href="#contact" data-i="nav_contact">Contact</a>
     </div>
     <div class="nav-right">
@@ -84,10 +83,7 @@
   <a href="#menu" data-i="nav_menu">Menu</a>
   <a href="#specials" data-i="nav_deals">Deals</a>
   <a href="#story" data-i="nav_story">Story</a>
-  <a href="#gallery" data-i="nav_gallery">Gallery</a>
   <a href="#book" data-i="nav_book">Book a table</a>
-  <a href="#events" data-i="nav_events">Events</a>
-  <a href="#jobs" data-i="nav_jobs">Jobs</a>
   <a href="#contact" data-i="nav_contact">Contact</a>
   <div class="lang" role="group" data-ia="aria_lang" aria-label="Language">
     <button type="button" data-lang="en" aria-pressed="true">EN</button>
@@ -196,8 +192,6 @@
   </div>
 </section>
 
-<div class="marquee" aria-hidden="true"><div class="marquee-track" id="marqueeTrack"></div></div>
-
 <!-- ============ SPECIALS ============ -->
 <section class="band" id="specials">
   <div class="wrap">
@@ -279,97 +273,11 @@
       <div class="stat"><b>180 g</b><span data-i="st2">of beef in every large burger</span></div>
       <div class="stat"><b>03:00</b><span data-i="st3">last order, every night except Monday</span></div>
     </div>
-    <div class="team">
-      <div class="t-card">
-        <div class="t-head"><div class="t-ava">VM</div><div><b>Vuk Marić</b><span class="role" data-i="t1_role">Head of grill</span></div></div>
-        <p data-i="t1_bio">Has worked the grill since our first night. Insists a patty is flipped exactly once and takes no counterarguments.</p>
-      </div>
-      <div class="t-card">
-        <div class="t-head"><div class="t-ava">IK</div><div><b>Iva Kostić</b><span class="role" data-i="t2_role">Bakery and sauces</span></div></div>
-        <p data-i="t2_bio">Mixes the sauces every evening before we open. The hot honey recipe lives in her head and nowhere else.</p>
-      </div>
-      <div class="t-card">
-        <div class="t-head"><div class="t-ava">NĐ</div><div><b>Nemanja Đorđević</b><span class="role" data-i="t3_role">Floor and shift</span></div></div>
-        <p data-i="t3_bio">Knows who sits at which table and what they ordered last time. Always the last one to switch off the lights.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ GALLERY ============ -->
-<section class="band" id="gallery">
-  <div class="wrap">
-    <div class="center">
-      <h2 class="sec-head" data-i="g_head">From our kitchen</h2>
-      <p class="sec-sub" data-i="g_sub">A few frames from the shift that starts when everyone else closes.</p>
-    </div>
-    <div class="g-grid" id="gGrid"></div>
-  </div>
-</section>
-
-<!-- ============ REVIEWS ============ -->
-<section class="band alt" id="reviews">
-  <div class="wrap">
-    <h2 class="sec-head" data-i="r_head">What the night owls say</h2>
-    <div class="rate-row">
-      <span class="rate-big" id="rateBig">4.8</span>
-      <div>
-        <div class="stars" aria-hidden="true" id="rateStars"></div>
-        <p class="rate-meta" data-i="r_meta">312 guest ratings since opening</p>
-      </div>
-    </div>
-    <div class="r-grid">
-      <article class="r-card">
-        <div class="stars" aria-hidden="true" data-stars="5"></div>
-        <blockquote data-i="r1">"After a night shift this is the only place where I eat like a human being. The Firefighter is dangerously good."</blockquote>
-        <div class="r-who"><span class="r-ava">MJ</span><div><b>Milan J.</b><span data-i="r1w">regular</span></div></div>
-      </article>
-      <article class="r-card">
-        <div class="stars" aria-hidden="true" data-stars="5"></div>
-        <blockquote data-i="r2">"Delivery arrived hot at half past midnight. The rosemary fries are now a must with everything."</blockquote>
-        <div class="r-who"><span class="r-ava">AS</span><div><b>Ana S.</b><span data-i="r2w">from the neighbourhood</span></div></div>
-      </article>
-      <article class="r-card">
-        <div class="stars" aria-hidden="true" data-stars="5"></div>
-        <blockquote data-i="r3">"The Baker is the first meat-free burger I ordered because it's actually good, not to be polite."</blockquote>
-        <div class="r-who"><span class="r-ava">TK</span><div><b>Tijana K.</b><span data-i="r3w">guest</span></div></div>
-      </article>
-    </div>
-    <div class="press">
-      <div><b>NOĆNI VODIČ</b><span data-i="pr1">Best late-night meal, 2024</span></div>
-      <div><b>GRADSKI ZALOGAJ</b><span data-i="pr2">Top 10 burgers in town</span></div>
-      <div><b>SMENA MAGAZIN</b><span data-i="pr3">The place that never sleeps</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ LOYALTY ============ -->
-<section class="band" id="club">
-  <div class="wrap loyal">
-    <div>
-      <span class="eyebrow" data-i="ly_eyebrow">Night Owl Club</span>
-      <h2 class="sec-head" data-i="ly_head">Every 9th burger is on us</h2>
-      <p class="sec-sub" data-i="ly_sub">Leave your phone number at the counter or with an online order. We count the stamps, you just eat. No app, no plastic card.</p>
-      <form class="ly-form" id="lyForm" novalidate>
-        <div class="ly-row">
-          <input class="inp" id="lyName" type="text" autocomplete="given-name" data-ip="ly_name_ph" data-ia="ly_name_ph" placeholder="First name" aria-label="First name">
-          <input class="inp" id="lyPhone" type="tel" autocomplete="tel" data-ip="ly_phone_ph" data-ia="ly_phone_ph" placeholder="Phone number" aria-label="Phone number">
-        </div>
-        <button type="submit" class="cta-framed" style="align-self:flex-start;" data-i="ly_btn">Join the club</button>
-        <p class="f-err" id="lyErr"></p>
-      </form>
-      <p class="note-ok" id="lyOk" hidden data-i="ly_ok">You're in. Your first stamp comes with your next burger.</p>
-    </div>
-    <div class="stamp-card" aria-hidden="true">
-      <h4>LAST EMBER</h4>
-      <span class="mono" data-i="ly_card">NIGHT OWL CARD, 3 OF 9 STAMPS</span>
-      <div class="stamps" id="stamps"></div>
-    </div>
   </div>
 </section>
 
 <!-- ============ BOOK ============ -->
-<section class="band alt" id="book">
+<section class="band" id="book">
   <div class="wrap">
     <div class="res-card">
       <span class="eyebrow" data-i="rs_eyebrow">Save a seat</span>
@@ -431,79 +339,6 @@
         <button type="button" class="cta-link" id="resAgain" data-i="rs_again">Make another booking</button>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ============ EVENTS ============ -->
-<section class="band" id="events">
-  <div class="wrap">
-    <span class="eyebrow" data-i="ev_eyebrow">When there are more of you</span>
-    <h2 class="sec-head" data-i="ev_head">Parties, catering and gift cards</h2>
-    <p class="sec-sub" data-i="ev_sub">We close the dining room for your group, or bring the grill and the crew to you.</p>
-    <div class="ev-grid">
-      <div class="ev-card">
-        <h3 data-i="ev1_h">Parties and catering</h3>
-        <p data-i="ev1_p">Birthdays, farewells, team nights and house parties. Tell us the headcount and the date, and we send a menu proposal within one day.</p>
-        <ul class="ev-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg><span data-i="ev_l1">Dining room for up to 40 people, booked 7 days ahead</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg><span data-i="ev_l2">Catering with a live grill at your address, from 20 people</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg><span data-i="ev_l3">Fixed menu per person or pay per order</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg><span data-i="ev_l4">Meat-free and gluten-free options for the whole table</span></li>
-        </ul>
-        <div style="margin-top:24px;">
-          <button type="button" class="cta-framed" data-prefill="event" data-i="ev_btn">Send an inquiry</button>
-        </div>
-      </div>
-      <div class="ev-card">
-        <h3 data-i="ev2_h">Gift card</h3>
-        <p data-i="ev2_p">For someone who likes to eat late. The gift card arrives by email, is valid for one year and works in the restaurant and for delivery.</p>
-        <div class="vouchers" id="voucherRow"></div>
-        <p class="small-note" data-i="ev2_note">Add a gift card to your order like any dish. The code to redeem it arrives right after checkout.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ JOBS ============ -->
-<section class="band alt" id="jobs">
-  <div class="wrap">
-    <span class="eyebrow" data-i="jb_eyebrow">Work with us</span>
-    <h2 class="sec-head" data-i="jb_head">We're hiring for the night shift</h2>
-    <p class="sec-sub" data-i="jb_sub">If you work better at night than in the morning, you're in the right place. Paid on time, a meal every shift, a ride home after 2 a.m.</p>
-    <div class="jobs">
-      <div class="job">
-        <div class="job-info">
-          <h3 data-i="j1_t">Grill cook</h3>
-          <p data-i="j1_d">Grill experience helps, but we also train people who want to learn.</p>
-          <div class="job-meta"><span data-i="j_full">Full time</span><span data-i="j_h1">20:00 to 03:30</span><span data-i="j_city">Belgrade</span></div>
-        </div>
-        <button type="button" class="cta-framed" data-prefill="job" data-job="j1_t" data-i="jb_btn">Apply</button>
-      </div>
-      <div class="job">
-        <div class="job-info">
-          <h3 data-i="j2_t">Server</h3>
-          <p data-i="j2_d">A 40-seat dining room and a bar. We want someone who remembers faces and likes the night crowd.</p>
-          <div class="job-meta"><span data-i="j_fullpart">Full or part time</span><span data-i="j_shifts">4 to 6 shifts a week</span></div>
-        </div>
-        <button type="button" class="cta-framed" data-prefill="job" data-job="j2_t" data-i="jb_btn">Apply</button>
-      </div>
-      <div class="job">
-        <div class="job-info">
-          <h3 data-i="j3_t">Delivery driver</h3>
-          <p data-i="j3_d">Your own scooter or car. The delivery area is 4 km, and we cover fuel and upkeep.</p>
-          <div class="job-meta"><span data-i="j_free">Freelance</span><span data-i="j_h3">22:00 to 02:30</span></div>
-        </div>
-        <button type="button" class="cta-framed" data-prefill="job" data-job="j3_t" data-i="jb_btn">Apply</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FAQ ============ -->
-<section class="band" id="faq">
-  <div class="wrap">
-    <h2 class="sec-head center" data-i="fq_head">Questions we hear a lot</h2>
-    <div class="faq-list" id="faqList"></div>
   </div>
 </section>
 
@@ -576,7 +411,7 @@
         <div class="panel">
           <div>
             <h3 style="font-size:2.1rem; margin-bottom:8px;" data-i="cf_head">Send us a message</h3>
-            <p class="small-note" data-i="cf_sub">Questions, feedback, parties or a job application. We answer within one working day.</p>
+            <p class="small-note" data-i="cf_sub">Questions, feedback or a party for your group. We answer within one working day.</p>
           </div>
           <form id="cfForm" class="form-grid" novalidate>
             <div class="field">
@@ -595,9 +430,7 @@
                 <option value="general" data-i="tp_general">General question</option>
                 <option value="feedback" data-i="tp_feedback">Feedback on a visit</option>
                 <option value="event" data-i="tp_event">Party or catering</option>
-                <option value="job" data-i="tp_job">Job application</option>
                 <option value="lost" data-i="tp_lost">Lost property</option>
-                <option value="press" data-i="tp_press">Press</option>
               </select>
             </div>
             <div class="field full">
@@ -650,11 +483,7 @@
           <li><a href="#menu" data-i="nav_menu">Menu</a></li>
           <li><a href="#specials" data-i="nav_deals">Deals</a></li>
           <li><a href="#story" data-i="nav_story">Story</a></li>
-          <li><a href="#gallery" data-i="nav_gallery">Gallery</a></li>
           <li><a href="#book" data-i="nav_book">Book a table</a></li>
-          <li><a href="#events" data-i="nav_events">Events</a></li>
-          <li><a href="#jobs" data-i="nav_jobs">Jobs</a></li>
-          <li><a href="#faq" data-i="nav_faq">FAQ</a></li>
         </ul>
       </div>
       <div class="f-col">
@@ -663,7 +492,6 @@
           <li><span class="txt">Ulica Plamena 12, Beograd</span></li>
           <li><span class="txt">011 555 0312</span></li>
           <li><span class="txt">hello@lastember.rs</span></li>
-          <li><span class="txt">jobs@lastember.rs</span></li>
         </ul>
         <h4 style="margin-top:22px;" data-i="ft_legal">Legal</h4>
         <ul>
@@ -671,16 +499,6 @@
           <li><button type="button" class="lnk" data-legal="terms" data-i="lg_terms">Terms of use</button></li>
           <li><button type="button" class="lnk" data-legal="cookies" data-i="lg_cookies">Cookies</button></li>
         </ul>
-      </div>
-      <div class="f-col">
-        <h4 data-i="ft_news">Night Mail</h4>
-        <p class="txt" data-i="ft_news_p">Once a month: new burgers and secret deals.</p>
-        <form class="news-row" id="newsForm" novalidate>
-          <input class="inp" type="email" id="newsEmail" data-ip="news_ph" data-ia="news_ph" placeholder="you@email.com" aria-label="you@email.com">
-          <button type="submit" class="btn-ghost" data-i="news_btn">Sign up</button>
-        </form>
-        <p class="f-err" id="newsErr"></p>
-        <p class="note-ok" id="newsOk" hidden data-i="news_ok">Thanks! See you in your inbox.</p>
       </div>
     </div>
     <div class="f-bottom">
@@ -811,28 +629,7 @@
   </div>
 </div>
 
-<!-- ============ LIGHTBOX ============ -->
-<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lbCap">
-  <button class="x-btn" id="lbClose" type="button" data-ia="aria_close" aria-label="Close">&times;</button>
-  <div class="lb-frame" id="lbFrame"></div>
-  <div class="lb-bar">
-    <p class="lb-cap" id="lbCap"></p>
-    <div class="lb-nav">
-      <button class="x-btn" id="lbPrev" type="button" data-ia="aria_prev" aria-label="Previous">&#8249;</button>
-      <button class="x-btn" id="lbNext" type="button" data-ia="aria_next" aria-label="Next">&#8250;</button>
-    </div>
-  </div>
-</div>
-
-<!-- ============ COOKIE / TOP / TOASTS ============ -->
-<div class="cookie" id="cookie" role="region" data-ia="aria_cookie" aria-label="Cookies">
-  <p data-i="ck_text">We only use the cookies the order basket needs. If you agree, we also count visits so we know when to put another cook on the grill.</p>
-  <div class="cookie-btns">
-    <button class="ck-btn" id="ckOnly" type="button" data-i="ck_only">Essential only</button>
-    <button class="ck-btn main" id="ckAll" type="button" data-i="ck_all">Accept all</button>
-  </div>
-</div>
-
+<!-- ============ TOP / TOASTS ============ -->
 <button class="to-top" id="toTop" type="button" data-ia="aria_top" aria-label="Back to top">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
@@ -843,7 +640,7 @@
   .chapter{ opacity:1 !important; transform:none !important; position:static !important; margin-bottom:24px; }
   .journey-stage{ position:relative !important; height:auto !important; padding-block:140px 80px; }
   .journey{ height:auto !important; }
-  .scroll-cue, .status-pill, .cookie, .to-top, .lang, .cart-btn{ display:none !important; }
+  .scroll-cue, .status-pill, .to-top, .lang, .cart-btn{ display:none !important; }
 </style></noscript>
 
 <script src="js/translations.js"></script>

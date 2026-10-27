@@ -32,7 +32,6 @@
      1. Illustrations (each dish gets its own drawing)
      ================================================================ */
   function svgWrap(inner){ return '<svg viewBox="0 0 120 120" aria-hidden="true" focusable="false">' + inner + '</svg>'; }
-  function bare(s){ return s.replace(/^<svg[^>]*>/,'').replace(/<\/svg>$/,''); }
   function artBurger(o){
     o = o || {};
     var pattyCol = o.veggie ? '#5F7F3B' : '#3A2415';
@@ -131,15 +130,6 @@
       '<path d="M88,66 L91,98 L105,98 L108,66 Z" fill="' + (drink || '#E8D96B') + '"/>' +
       '<rect x="98" y="30" width="5" height="28" rx="2.5" fill="#E0A04A" transform="rotate(12 100 44)"/>');
   }
-  function artVoucher(){
-    return svgWrap('<rect x="16" y="38" width="88" height="52" rx="9" fill="#20294D" stroke="#E0A04A" stroke-width="2"/>' +
-      '<path d="M16,60 h88" stroke="#E0A04A" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>' +
-      '<path d="M46,80 C42,70 49,66 46,58 C54,62 51,71 57,68 C56,76 51,80 46,80Z" fill="#E0A04A"/>' +
-      '<rect x="66" y="64" width="26" height="4" rx="2" fill="#F2C36F" opacity="0.85"/><rect x="66" y="72" width="18" height="4" rx="2" fill="#F2C36F" opacity="0.55"/>' +
-      '<circle cx="16" cy="60" r="6" fill="#151B36"/><circle cx="104" cy="60" r="6" fill="#151B36"/>');
-  }
-  var STAR = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>';
-  var FLAME = '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M12 27C8 19 15 15 12 6c8 4 6 12 11 10-1 7-7 11-11 11z" fill="#C8452F"/></svg>';
   var PLUS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>';
   var CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>';
   var XICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>';
@@ -259,12 +249,6 @@
       what:[['Two Cabbies','Large rosemary fries','Two drinks of your choice'],['Dva Taksiste','Veliki pomfrit sa ruzmarinom','Dva pića po izboru']] }
   ];
 
-  var VOUCHERS = [
-    { id:'v1', cat:'voucher', price:2000, art:artVoucher() },
-    { id:'v2', cat:'voucher', price:4000, art:artVoucher() },
-    { id:'v3', cat:'voucher', price:6000, art:artVoucher() }
-  ];
-
   var EXTRAS = [
     { id:'e1', price:350, name:['Extra patty','Dodatna pljeskavica'] },
     { id:'e2', price:120, name:['Double cheese','Dupli sir'] },
@@ -287,34 +271,15 @@
     1:{ t:["Kitchen's off",'Kuhinja odmara'], d:['Closed on Mondays. Back on Tuesday at 20:00.','Ponedeljkom ne radimo. Vidimo se u utorak u 20:00.'], off:true }
   };
 
-  var FAQ = [
-    [['Until what time do you deliver?','Do koliko sati dostavljate?'],
-     ['We take delivery orders until 02:30 and pickup orders until 02:45. We deliver within 4 km of the restaurant.','Porudžbine za dostavu primamo do 02:30, a za preuzimanje do 02:45. Dostavljamo u krugu od 4 km od lokala.']],
-    [['How much is delivery?','Koliko košta dostava?'],
-     ['Delivery is 190 RSD and free on orders over 2,000 RSD. You can check your address in the Contact section.','Dostava je 190 dinara, a besplatna je za porudžbine preko 2.000 dinara. Adresu možeš proveriti u odeljku Kontakt.']],
-    [['Can I order before you open?','Mogu li da poručim pre otvaranja?'],
-     ['Yes. Outside opening hours the order form offers time slots from 20:15, and the kitchen starts on your order in time for the slot you picked.','Može. Van radnog vremena porudžbina nudi termine od 20:15, a kuhinja kreće na vreme da bude spremno u izabrano vreme.']],
-    [['How long does an order take?','Koliko se čeka porudžbina?'],
-     ['Pickup is ready in about 20 minutes and delivery arrives in about 35. On Friday and Saturday after midnight, add about ten minutes.','Preuzimanje je spremno za oko 20 minuta, a dostava stiže za oko 35. Petkom i subotom posle ponoći dodaj još desetak minuta.']],
-    [['Can I book for a larger group?','Mogu li da rezervišem za veću grupu?'],
-     ["Online we take bookings for up to 8 people. For bigger groups and parties, send an inquiry from the Events section or call 011 555 0312, and we'll join tables and suggest a menu.",'Preko sajta primamo rezervacije do 8 osoba. Za veće grupe i proslave pošalji upit iz odeljka Proslave ili pozovi 011 555 0312, pa ćemo spojiti stolove i predložiti meni.']],
-    [['Do you have meat-free and gluten-free options?','Imate li opcije bez mesa i bez glutena?'],
-     ['The Baker is our meat-free burger, made with chickpeas and mushrooms. Any burger can come without the bun, in a bowl with salad. Allergens are listed with every dish, but if you have a severe allergy, tell us before ordering because everything is prepared in one kitchen.','Pekar je naš burger bez mesa, od leblebije i pečuraka. Svaki burger možeš dobiti i bez lepinje, u zdeli sa salatom. Alergeni su navedeni uz svako jelo, ali ako imaš tešku alergiju, javi nam pre porudžbine jer se sve priprema u istoj kuhinji.']],
-    [['Is the place accessible, and are pets allowed?','Da li je lokal pristupačan i primate li ljubimce?'],
-     ['The entrance is at street level and the dining room is wheelchair accessible. Pets are welcome in the garden, and guide dogs everywhere.','Ulaz je u nivou ulice i sala je pristupačna za invalidska kolica. Ljubimci su dobrodošli u bašti, a psi vodiči svuda.']],
-    [['How can I pay?','Kako mogu da platim?'],
-     ['Cash or card in the restaurant. For delivery you pay the courier, by cash or card.','U lokalu gotovinom ili karticom. Za dostavu plaćaš kuriru, gotovinom ili karticom.']]
-  ];
-
   var LEGAL = {
     privacy:{ t:['Privacy policy','Politika privatnosti'], b:[
       '<h4>What we collect</h4><p>When you order or book a table we ask for your name, phone number and, for delivery, your address. We use them only to deliver the order or hold the table.</p>' +
-      '<h4>How long we keep it</h4><p>Order details are kept for twelve months for bookkeeping and then deleted. Your Night Mail sign-up stays until you unsubscribe, which you can do at any time with one click in the email itself.</p>' +
+      '<h4>How long we keep it</h4><p>Order details are kept for twelve months for bookkeeping and then deleted.</p>' +
       '<h4>Who sees it</h4><p>Only the courier carrying your order sees your name and address. We never sell data and never use it for third-party advertising.</p>' +
       '<h4>Your rights</h4><p>You can ask to see, correct or delete your data at hello@lastember.rs. We reply within 30 days.</p>' +
       '<p style="margin-top:18px;">This site is a demo, so no real data is collected here.</p>',
       '<h4>Šta prikupljamo</h4><p>Kada poručuješ ili rezervišeš sto, tražimo ime, telefon i, za dostavu, adresu. To koristimo samo da bismo isporučili porudžbinu ili sačuvali sto.</p>' +
-      '<h4>Koliko dugo čuvamo</h4><p>Podatke o porudžbini čuvamo dvanaest meseci zbog knjigovodstva, a zatim ih brišemo. Prijavu na Noćnu poštu čuvamo dok se ne odjaviš, a to možeš u svakom trenutku, jednim klikom u samoj poruci.</p>' +
+      '<h4>Koliko dugo čuvamo</h4><p>Podatke o porudžbini čuvamo dvanaest meseci zbog knjigovodstva, a zatim ih brišemo.</p>' +
       '<h4>Ko ih vidi</h4><p>Ime i adresu vidi samo kurir koji nosi tvoju porudžbinu. Ne prodajemo podatke nikome i ne koristimo ih za reklame trećih strana.</p>' +
       '<h4>Tvoja prava</h4><p>Možeš tražiti uvid, ispravku ili brisanje svojih podataka na hello@lastember.rs. Odgovaramo u roku od 30 dana.</p>' +
       '<p style="margin-top:18px;">Ovaj sajt je demo, pa se ovde ne prikupljaju pravi podaci.</p>' ] },
@@ -322,20 +287,16 @@
       '<h4>Orders</h4><p>An order is accepted once you receive an order number. If a dish sells out we may cancel the order, and we let you know by phone.</p>' +
       '<h4>Prices and payment</h4><p>All prices are in Serbian dinars and include VAT. You pay by cash or card on pickup or to the courier.</p>' +
       '<h4>Cancelling</h4><p>You can cancel an order before the kitchen starts on it by calling 011 555 0312. Please cancel a table booking at least one hour ahead so we can give the seat to someone else.</p>' +
-      '<h4>Gift cards</h4><p>A gift card is valid for one year from issue, can be passed on to someone else and cannot be exchanged for cash.</p>' +
       '<p style="margin-top:18px;">This site is a demo, so no order placed here is real.</p>',
       '<h4>Porudžbine</h4><p>Porudžbina je primljena kada dobiješ broj porudžbine. Ako se jelo rasproda, možemo da otkažemo porudžbinu, uz obaveštenje telefonom.</p>' +
       '<h4>Cene i plaćanje</h4><p>Sve cene su u dinarima i uključuju PDV. Plaćanje je gotovinom ili karticom pri preuzimanju ili kuriru.</p>' +
       '<h4>Otkazivanje</h4><p>Porudžbinu možeš otkazati dok ne krene priprema, pozivom na 011 555 0312. Rezervaciju stola otkaži bar sat vremena ranije da bismo mesto dali nekom drugom.</p>' +
-      '<h4>Vaučeri</h4><p>Poklon vaučer važi godinu dana od izdavanja, prenosiv je i ne može se zameniti za gotovinu.</p>' +
       '<p style="margin-top:18px;">Ovaj sajt je demo, pa nijedna porudžbina nije stvarna.</p>' ] },
     cookies:{ t:['Cookies','Kolačići'], b:[
-      '<h4>Essential</h4><p>They keep your order basket, language and delivery choice while you browse. Ordering does not work without them, so they cannot be switched off.</p>' +
-      '<h4>Visit counting</h4><p>If you agree, we count visits and see which sections people open most. We never link this to your name or phone number.</p>' +
-      '<h4>Changing your choice</h4><p>Clear this site\'s data in your browser settings and the cookie bar appears again on your next visit.</p>',
-      '<h4>Neophodni</h4><p>Pamte tvoju korpu, jezik i izbor dostave dok si na sajtu. Bez njih porudžbina ne radi, pa se ne mogu isključiti.</p>' +
-      '<h4>Brojanje poseta</h4><p>Ako pristaneš, brojimo posete i gledamo koje sekcije ljudi najviše otvaraju. To nikada ne vezujemo za tvoje ime ni broj telefona.</p>' +
-      '<h4>Kako da promeniš izbor</h4><p>Obriši podatke ovog sajta u podešavanjima pregledača i traka sa izborom će se pojaviti ponovo pri sledećoj poseti.</p>' ] }
+      '<h4>Only what ordering needs</h4><p>The site keeps your order basket, language and delivery choice in your browser while you browse. Ordering does not work without them, so they cannot be switched off.</p>' +
+      '<h4>No tracking</h4><p>We do not count visits and do not use advertising or third-party cookies, so there is nothing to accept.</p>',
+      '<h4>Samo ono što porudžbini treba</h4><p>Sajt u tvom pregledaču pamti korpu, jezik i izbor dostave dok si na sajtu. Bez toga porudžbina ne radi, pa se ne može isključiti.</p>' +
+      '<h4>Bez praćenja</h4><p>Ne brojimo posete i ne koristimo reklamne kolačiće ni kolačiće trećih strana, pa nema šta da prihvatiš.</p>' ] }
   };
 
   /* delivery neighbourhoods, written without diacritics for matching */
@@ -345,10 +306,10 @@
   /* ================================================================
      3. Lookups and helpers
      ================================================================ */
-  var ALL = MENU.concat(COMBOS, VOUCHERS);
+  var ALL = MENU.concat(COMBOS);
   function findItem(id){ for(var i = 0; i < ALL.length; i++){ if(ALL[i].id === id) return ALL[i]; } return null; }
   function findExtra(id){ for(var i = 0; i < EXTRAS.length; i++){ if(EXTRAS[i].id === id) return EXTRAS[i]; } return null; }
-  function nameOf(it){ return it.cat === 'voucher' ? t('v_name', { p: fmtNum(it.price) }) : L(it.name); }
+  function nameOf(it){ return L(it.name); }
   function $(id){ return document.getElementById(id); }
   function each(sel, fn){ Array.prototype.forEach.call(document.querySelectorAll(sel), fn); }
   function phoneOk(v){ return /^[+0-9\s\/().-]+$/.test(v) && v.replace(/\D/g,'').length >= 6; }
@@ -403,12 +364,6 @@
     each('[data-ia]', function(el){ el.setAttribute('aria-label', t(el.getAttribute('data-ia'))); });
     each('[data-lang]', function(b){ b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang)); });
     document.documentElement.lang = lang === 'sr' ? 'sr-Latn' : 'en';
-    $('rateBig').textContent = lang === 'sr' ? '4,8' : '4.8';
-  }
-
-  function renderMarquee(){
-    var one = ['mq1','mq2','mq3','mq4','mq5','mq6'].map(function(k){ return '<span>' + esc(t(k)) + '<b>&#9679;</b></span>'; }).join('');
-    $('marqueeTrack').innerHTML = one + one;
   }
 
   function renderSpecials(){
@@ -420,33 +375,6 @@
         '<span class="sp-day">' + esc(DAYS[lang].short[d]) + (d === today ? '<em>' + esc(t('sp_today')) + '</em>' : '') + '</span>' +
         '<span class="sp-title">' + esc(L(s.t)) + '</span>' +
         '<span class="sp-text">' + esc(L(s.d)) + '</span></div>';
-    }).join('');
-  }
-
-  function renderStars(){
-    $('rateStars').innerHTML = STAR + STAR + STAR + STAR + STAR;
-    each('[data-stars]', function(el){ var n = Number(el.getAttribute('data-stars')); var s = ''; for(var i = 0; i < n; i++) s += STAR; el.innerHTML = s; });
-  }
-
-  function renderStamps(){
-    var s = '';
-    for(var i = 0; i < 9; i++){
-      if(i < 3) s += '<span class="stamp on">' + FLAME + '</span>';
-      else if(i === 8) s += '<span class="stamp free">' + esc(t('ly_free')) + '</span>';
-      else s += '<span class="stamp"></span>';
-    }
-    s += '<span class="stamp" style="visibility:hidden"></span>';
-    $('stamps').innerHTML = s;
-  }
-
-  function renderFaq(){
-    var list = $('faqList');
-    var open = [];
-    each('#faqList details', function(d, i){ if(d.open) open.push(i); });
-    list.innerHTML = FAQ.map(function(q, i){
-      return '<details class="faq-item"' + (open.indexOf(i) > -1 ? ' open' : '') + '><summary>' + esc(L(q[0])) +
-        '<svg class="faq-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>' +
-        '</summary><p>' + esc(L(q[1])) + '</p></details>';
     }).join('');
   }
 
@@ -533,64 +461,15 @@
       '</article>';
     }).join('');
   }
-  function renderVouchers(){
-    $('voucherRow').innerHTML = VOUCHERS.map(function(v){
-      return '<button type="button" class="v-card" data-add="' + v.id + '" aria-label="' + esc(t('add_aria', { n:nameOf(v) })) + '"><b>' + fmtNum(v.price) + '</b><span>' + esc(t('v_unit')) + '</span></button>';
-    }).join('');
-  }
 
   /* ================================================================
-     7. Gallery + lightbox
-     ================================================================ */
-  function sceneBig(svgStr, bg){
-    return '<rect width="400" height="300" fill="' + bg + '"/><ellipse cx="200" cy="155" rx="140" ry="115" fill="#E0A04A" opacity="0.09"/>' +
-      '<g transform="translate(140 30) scale(2)">' + bare(svgStr) + '</g>';
-  }
-  var SCENES = [
-    { cap:'g1', draw:function(){ return '<rect width="400" height="300" fill="#0E1328"/>' +
-        '<g stroke="#E0A04A" stroke-width="8" stroke-linecap="round" opacity="0.9"><line x1="60" y1="212" x2="340" y2="212"/><line x1="60" y1="238" x2="340" y2="238"/><line x1="60" y1="264" x2="340" y2="264"/></g>' +
-        '<path d="M130,212 C116,168 146,154 138,116 C172,138 164,172 186,164 C178,198 152,212 130,212Z" fill="#E0A04A"/>' +
-        '<path d="M232,212 C219,164 252,150 242,104 C280,128 270,168 292,160 C283,198 256,212 232,212Z" fill="#F2C36F" opacity="0.9"/>' +
-        '<path d="M190,96 C180,76 200,60 190,40" fill="none" stroke="#F3EADB" stroke-width="4" opacity="0.4" stroke-linecap="round"/>'; } },
-    { cap:'g2', draw:function(){ return sceneBig(artBurger({}), '#141a35'); } },
-    { cap:'g3', draw:function(sfx){ var f = 'neonBlur' + sfx; return '<rect width="400" height="300" fill="#0a0f22"/>' +
-        '<defs><filter id="' + f + '" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="7"/></filter></defs>' +
-        '<rect x="60" y="105" width="280" height="90" rx="18" fill="none" stroke="#E0A04A" stroke-width="5" filter="url(#' + f + ')" opacity="0.8"/>' +
-        '<rect x="60" y="105" width="280" height="90" rx="18" fill="none" stroke="#F2C36F" stroke-width="3"/>' +
-        '<text x="200" y="166" text-anchor="middle" font-family="Big Shoulders Display, Arial Narrow, sans-serif" font-size="38" font-weight="800" letter-spacing="4" fill="#F2C36F" filter="url(#' + f + ')" opacity="0.9">LAST EMBER</text>' +
-        '<text x="200" y="166" text-anchor="middle" font-family="Big Shoulders Display, Arial Narrow, sans-serif" font-size="38" font-weight="800" letter-spacing="4" fill="#FCEFD8">LAST EMBER</text>'; } },
-    { cap:'g4', draw:function(){ return sceneBig(artFries(), '#151B36'); } },
-    { cap:'g5', draw:function(){ return sceneBig(artShake(), '#141a35'); } },
-    { cap:'g6', draw:function(){ return '<rect width="400" height="300" fill="#0a0f22"/>' +
-        '<circle cx="322" cy="70" r="30" fill="#F3EADB" opacity="0.9"/><circle cx="312" cy="62" r="26" fill="#0a0f22"/>' +
-        '<g fill="#151B36"><rect x="30" y="140" width="56" height="160"/><rect x="98" y="110" width="48" height="190"/><rect x="158" y="160" width="62" height="140"/><rect x="232" y="120" width="52" height="180"/><rect x="296" y="170" width="70" height="130"/></g>' +
-        '<g fill="#E0A04A" opacity="0.85"><rect x="112" y="128" width="8" height="8"/><rect x="128" y="150" width="8" height="8"/><rect x="246" y="140" width="8" height="8"/><rect x="262" y="168" width="8" height="8"/><rect x="44" y="160" width="8" height="8"/><rect x="176" y="180" width="8" height="8"/></g>'; } }
-  ];
-  function sceneSvg(i, sfx){ return '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">' + SCENES[i].draw(sfx) + '</svg>'; }
-  function renderGallery(){
-    $('gGrid').innerHTML = SCENES.map(function(s, i){
-      return '<button type="button" class="g-tile" data-gal="' + i + '" aria-label="' + esc(t(s.cap)) + '">' + sceneSvg(i, 't' + i) + '<span class="g-cap">' + esc(t(s.cap)) + '</span></button>';
-    }).join('');
-  }
-  var lb = $('lightbox'), lbIndex = 0;
-  function showLb(){
-    $('lbFrame').innerHTML = sceneSvg(lbIndex, 'lb');
-    $('lbCap').textContent = t(SCENES[lbIndex].cap) + '   ' + (lbIndex + 1) + ' / ' + SCENES.length;
-  }
-  function openLb(i){ lbIndex = i; showLb(); openLayer(lb, $('lbClose')); }
-  $('lbPrev').addEventListener('click', function(){ lbIndex = (lbIndex + SCENES.length - 1) % SCENES.length; showLb(); });
-  $('lbNext').addEventListener('click', function(){ lbIndex = (lbIndex + 1) % SCENES.length; showLb(); });
-  $('lbClose').addEventListener('click', function(){ closeLayer(lb); });
-  lb.addEventListener('click', function(e){ if(e.target === lb) closeLayer(lb); });
-
-  /* ================================================================
-     8. Layers (drawer, modals, lightbox, mobile menu)
+     7. Layers (drawer, modals, mobile menu)
      ================================================================ */
   var overlay = $('overlay'), drawer = $('drawer'), itemModal = $('itemModal'), legalModal = $('legalModal'), mobileMenu = $('mobileMenu');
   var lastFocus = [];
   function isOpen(el){ return el.classList.contains('open'); }
   function sync(){
-    var any = isOpen(drawer) || isOpen(itemModal) || isOpen(legalModal) || isOpen(lb) || isOpen(mobileMenu);
+    var any = isOpen(drawer) || isOpen(itemModal) || isOpen(legalModal) || isOpen(mobileMenu);
     document.body.classList.toggle('lock', any);
     overlay.classList.toggle('show', isOpen(drawer) || isOpen(itemModal) || isOpen(legalModal));
   }
@@ -616,17 +495,15 @@
   });
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape'){
-      if(isOpen(lb)) closeLayer(lb);
-      else if(isOpen(itemModal)) closeLayer(itemModal);
+      if(isOpen(itemModal)) closeLayer(itemModal);
       else if(isOpen(legalModal)) closeLayer(legalModal);
       else if(isOpen(drawer)) closeLayer(drawer);
       else if(isOpen(mobileMenu)) closeLayer(mobileMenu);
-    } else if(isOpen(lb) && e.key === 'ArrowRight'){ $('lbNext').click(); }
-    else if(isOpen(lb) && e.key === 'ArrowLeft'){ $('lbPrev').click(); }
+    }
   });
 
   /* ================================================================
-     9. Cart
+     8. Cart
      ================================================================ */
   var cart = [], mode = 'pickup', pay = 'cash', tipPct = 0, promoPct = 0, promoCode = '', promoState = null;
   var orderShown = false, lastOrder = null, orderTimers = [];
@@ -651,8 +528,9 @@
   function linePrice(l){ var p = findItem(l.id).price; l.extras.forEach(function(x){ var e = findExtra(x); if(e) p += e.price; }); return p; }
   function qtyTotal(){ return cart.reduce(function(a, l){ return a + l.qty; }, 0); }
   function computeTotals(lines, m, pct, tp){
-    var sub = 0, base = 0;
-    lines.forEach(function(l){ var v = l.qty * linePrice(l); sub += v; if(findItem(l.id).cat !== 'voucher') base += v; });
+    var sub = 0;
+    lines.forEach(function(l){ sub += l.qty * linePrice(l); });
+    var base = sub;
     var disc = Math.round(base * pct / 100);
     var food = base - disc;
     var del = (m === 'delivery' && base > 0 && food < 2000) ? 190 : 0;
@@ -861,7 +739,7 @@
   $('newOrder').addEventListener('click', function(){ orderShown = false; updateCartUI(); });
 
   /* ================================================================
-     10. Item modal
+     9. Item modal
      ================================================================ */
   var current = null, curExtras = [], curQty = 1;
   function fillItem(){
@@ -898,7 +776,7 @@
   itemModal.addEventListener('click', function(e){ if(e.target === itemModal) closeLayer(itemModal); });
 
   /* ================================================================
-     11. Legal modal
+     10. Legal modal
      ================================================================ */
   var legalKey = null;
   function fillLegal(){ if(!legalKey) return; $('lgTitle').textContent = L(LEGAL[legalKey].t); $('lgBody').innerHTML = L(LEGAL[legalKey].b); }
@@ -906,7 +784,7 @@
   legalModal.addEventListener('click', function(e){ if(e.target === legalModal) closeLayer(legalModal); });
 
   /* ================================================================
-     12. Global clicks
+     11. Global clicks
      ================================================================ */
   document.addEventListener('click', function(e){
     var el;
@@ -918,10 +796,8 @@
     }
     if((el = e.target.closest('[data-open]'))){ openItem(el.getAttribute('data-open')); return; }
     if((el = e.target.closest('[data-legal]'))){ legalKey = el.getAttribute('data-legal'); fillLegal(); openLayer(legalModal, $('lgClose')); return; }
-    if((el = e.target.closest('[data-gal]'))){ openLb(Number(el.getAttribute('data-gal'))); return; }
     if((el = e.target.closest('[data-lang]'))){ setLang(el.getAttribute('data-lang')); return; }
     if((el = e.target.closest('[data-social]'))){ toast(t('social_toast')); return; }
-    if((el = e.target.closest('[data-prefill]'))){ prefill(el); return; }
     if((el = e.target.closest('[data-copy]'))){ copyText(el); return; }
   });
 
@@ -940,7 +816,7 @@
   }
 
   /* ================================================================
-     13. Forms
+     12. Forms
      ================================================================ */
   /* reservation */
   var rDate = $('rDate'), lastRes = null;
@@ -979,14 +855,6 @@
   });
   $('resAgain').addEventListener('click', function(){ $('resForm').reset(); rDate.value = isoDate(new Date()); $('resOk').hidden = true; $('resForm').hidden = false; lastRes = null; });
 
-  /* loyalty */
-  $('lyForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    if($('lyName').value.trim().length < 2 || !phoneOk($('lyPhone').value.trim())){ $('lyErr').textContent = t('ly_err'); return; }
-    $('lyErr').textContent = '';
-    $('lyForm').hidden = true; $('lyOk').hidden = false;
-  });
-
   /* contact */
   var lastCf = null;
   function renderCf(){ if(lastCf) $('cfOkText').textContent = t('cf_ok_text', { n:lastCf.first, e:lastCf.email }); }
@@ -1003,24 +871,6 @@
     $('cfForm').hidden = true; $('cfOk').hidden = false;
   });
   $('cfAgain').addEventListener('click', function(){ $('cfForm').reset(); $('cfOk').hidden = true; $('cfForm').hidden = false; lastCf = null; });
-  function prefill(btn){
-    if(!$('cfOk').hidden) $('cfAgain').click();
-    var kind = btn.getAttribute('data-prefill');
-    $('cfTopic').value = kind === 'job' ? 'job' : 'event';
-    $('cfMsg').value = kind === 'job' ? t('msg_job', { j:t(btn.getAttribute('data-job')) }) : t('msg_event');
-    var ct = $('contact'); if(ct.scrollIntoView) ct.scrollIntoView({ behavior:'smooth', block:'start' });
-    setTimeout(function(){ try{ ($('cfName').value ? $('cfMsg') : $('cfName')).focus({ preventScroll:true }); }catch(err){} }, 500);
-  }
-
-  /* newsletter */
-  $('newsForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    var em = $('newsEmail');
-    if(!emailOk(em.value.trim())){ em.classList.add('bad'); $('newsErr').textContent = t('e_email'); em.focus(); return; }
-    em.classList.remove('bad'); $('newsErr').textContent = '';
-    $('newsForm').hidden = true; $('newsOk').hidden = false;
-  });
-
   /* delivery zone */
   var lastZone = null;
   function norm(s){ return s.toLowerCase().replace(/[šś]/g,'s').replace(/đ/g,'dj').replace(/[čć]/g,'c').replace(/ž/g,'z').replace(/\s+/g,' ').trim(); }
@@ -1044,7 +894,7 @@
   $('zoneInput').addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); checkZone(); } });
 
   /* ================================================================
-     14. Nav, mobile menu, cookie, back to top
+     13. Nav, mobile menu, back to top
      ================================================================ */
   var nav = $('nav'), toTop = $('toTop');
   function onScrollUi(){
@@ -1058,26 +908,16 @@
   $('mobileClose').addEventListener('click', function(){ closeLayer(mobileMenu); });
   mobileMenu.addEventListener('click', function(e){ if(e.target.tagName === 'A') closeLayer(mobileMenu); });
 
-  (function cookieBar(){
-    var bar = $('cookie');
-    if(LS.get('lastember.cookie')) return;
-    setTimeout(function(){ bar.classList.add('show'); }, 1400);
-    function done(v, msg){ LS.set('lastember.cookie', v); bar.classList.remove('show'); toast(t(msg)); }
-    $('ckOnly').addEventListener('click', function(){ done('essential', 'ck_t1'); });
-    $('ckAll').addEventListener('click', function(){ done('all', 'ck_t2'); });
-  })();
-
   /* ================================================================
-     15. Language switch
+     14. Language switch
      ================================================================ */
   function renderAll(){
     applyStatic();
-    renderMarquee(); renderSpecials(); renderTabs(); renderMenu(); renderCombos(); renderVouchers();
-    renderGallery(); renderStars(); renderStamps(); renderFaq(); renderHours(); renderStatus();
+    renderSpecials(); renderTabs(); renderMenu(); renderCombos();
+    renderHours(); renderStatus();
     buildSlots(); updateCartUI(); renderOrder(); renderRes(); renderCf(); renderZone();
     if(isOpen(itemModal)) fillItem();
     if(isOpen(legalModal)) fillLegal();
-    if(isOpen(lb)) showLb();
   }
   function setLang(l){
     if(l !== 'en' && l !== 'sr') return;
@@ -1086,7 +926,7 @@
   }
 
   /* ================================================================
-     16. Scroll-scrub hero
+     15. Scroll-scrub hero
      ================================================================ */
   var journey = $('top'), rig = $('rig'), glow = $('glow');
   var chapters = Array.prototype.slice.call(document.querySelectorAll('.chapter'));
@@ -1139,7 +979,7 @@
   }
 
   /* ================================================================
-     17. Start
+     16. Start
      ================================================================ */
   renderAll();
   onScrollUi();

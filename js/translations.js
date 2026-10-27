@@ -6,10 +6,9 @@ window.LASTEMBER_TEXT = (function(){
   var D = {
     skip:["Skip to the menu","Preskoči na meni"],
     nav_menu:["Menu","Meni"], nav_deals:["Deals","Ponude"], nav_story:["Story","Priča"], nav_book:["Book a table","Rezervacije"],
-    nav_events:["Events","Proslave"], nav_contact:["Contact","Kontakt"], nav_gallery:["Gallery","Galerija"], nav_jobs:["Jobs","Posao"],
-    nav_faq:["FAQ","Česta pitanja"], nav_order:["Order","Poruči"],
+    nav_contact:["Contact","Kontakt"], nav_order:["Order","Poruči"],
     aria_lang:["Language","Jezik"], aria_cart:["Open your order","Otvori korpu"], aria_nav:["Open navigation","Otvori navigaciju"],
-    aria_close:["Close","Zatvori"], aria_prev:["Previous","Prethodna"], aria_next:["Next","Sledeća"], aria_cookie:["Cookies","Kolačići"], aria_top:["Back to top","Nazad na vrh"],
+    aria_close:["Close","Zatvori"], aria_top:["Back to top","Nazad na vrh"],
 
     h_eyebrow:["Belgrade, open till 03:00","Beograd, otvoreno do 03:00"],
     h1:["When the lights go out.","Kad se svetla pogase."], h1s:["The city sleeps. The grill doesn't.","Grad spava. Roštilj ne."],
@@ -18,9 +17,6 @@ window.LASTEMBER_TEXT = (function(){
     h3:["Layer by layer.","Sloj po sloj."], h3s:["The cheese melts right on time.","Sir se topi tačno na vreme."],
     h4:["Yours, tonight.","Tvoje, večeras."], h4s:["Fresh. Hot. No waiting till morning.","Sveže. Toplo. Bez čekanja do jutra."],
     h_order:["Order tonight","Poruči večeras"], h_book:["Book a table","Rezerviši sto"],
-
-    mq1:["OPEN TILL 03:00","OTVORENO DO 03:00"], mq2:["DELIVERY WITHIN 4 KM","DOSTAVA DO 4 KM"], mq3:["BEEF GROUND FRESH EVERY DAY","SVEŽE MLEVENO SVAKOG DANA"],
-    mq4:["180 G PATTIES","PLJESKAVICE OD 180 G"], mq5:["HOUSE-MADE SAUCES","KUĆNI SOSOVI"], mq6:["BUNS FROM OUR OWN BAKERY","LEPINJE IZ NAŠE PEKARE"],
 
     sp_eyebrow:["This week","Ove nedelje"], sp_head:["A different deal every night","Svako veče druga ponuda"],
     sp_sub:["Specials apply in the restaurant and on pickup orders. Just mention it at the counter.","Ponude važe u lokalu i za preuzimanje. Samo reci na pultu."],
@@ -57,29 +53,6 @@ window.LASTEMBER_TEXT = (function(){
            "Ime smo dali po poslednjoj žeravici, onome što ostane kad se plamen smiri. Ne pravi buku, ali greje najduže."],
     st1:["the year of our first grill","godina prvog roštilja"], st2:["of beef in every large burger","junetine u svakom velikom burgeru"],
     st3:["last order, every night except Monday","poslednja porudžbina, svake noći osim ponedeljka"],
-    t1_role:["Head of grill","Šef roštilja"], t2_role:["Bakery and sauces","Pekara i sosovi"], t3_role:["Floor and shift","Sala i smena"],
-    t1_bio:["Has worked the grill since our first night. Insists a patty is flipped exactly once and takes no counterarguments.","Peče od prve večeri. Tvrdi da se pljeskavica okreće samo jednom i ne prima kontraargumente."],
-    t2_bio:["Mixes the sauces every evening before we open. The hot honey recipe lives in her head and nowhere else.","Meša sosove svako veče pre otvaranja. Recept za ljuti med drži u glavi, nigde zapisan."],
-    t3_bio:["Knows who sits at which table and what they ordered last time. Always the last one to switch off the lights.","Zna ko sedi za kojim stolom i šta je poručio prošli put. Uvek poslednji gasi svetlo."],
-
-    g_head:["From our kitchen","Iz naše kuhinje"], g_sub:["A few frames from the shift that starts when everyone else closes.","Nekoliko kadrova iz smene koja počinje kad se ostali zatvaraju."],
-    g1:["Live fire, every night","Živa vatra, svake noći"], g2:["The Cabbie, ready to go","Taksista, spreman"], g3:["The sign that never sleeps","Znak koji ne spava"],
-    g4:["Rosemary fries","Pomfrit sa ruzmarinom"], g5:["A shake to end the shift","Šejk za kraj smene"], g6:["The city sleeps, we don't","Grad spava, mi ne"],
-
-    r_head:["What the night owls say","Šta kažu noćne ptice"], r_meta:["312 guest ratings since opening","312 ocena gostiju od otvaranja"],
-    r1:["“After a night shift this is the only place where I eat like a human being. The Firefighter is dangerously good.”","„Posle noćne smene ovo je jedino mesto gde jedem kao čovek. Vatrogasac je opasno dobar.“"],
-    r2:["“Delivery arrived hot at half past midnight. The rosemary fries are now a must with everything.”","„Dostava je stigla topla u pola jedan. Pomfrit sa ruzmarinom mi je sad obavezan uz sve.“"],
-    r3:["“The Baker is the first meat-free burger I ordered because it's actually good, not to be polite.”","„Pekar je prvi burger bez mesa koji nisam naručila iz pristojnosti, nego zato što je stvarno dobar.“"],
-    r1w:["regular","redovan gost"], r2w:["from the neighbourhood","gost iz kraja"], r3w:["guest","gost"],
-    pr1:["Best late-night meal, 2024","Najbolji kasni obrok, 2024."], pr2:["Top 10 burgers in town","Top 10 burgera u gradu"], pr3:["The place that never sleeps","Mesto koje ne spava"],
-
-    ly_eyebrow:["Night Owl Club","Klub noćnih ptica"], ly_head:["Every 9th burger is on us","Svaki deveti burger je naš"],
-    ly_sub:["Leave your phone number at the counter or with an online order. We count the stamps, you just eat. No app, no plastic card.",
-            "Ostavi broj telefona na pultu ili uz online porudžbinu. Mi brojimo pečate, ti samo jedi. Bez aplikacije i bez plastične kartice."],
-    ly_name_ph:["First name","Ime"], ly_phone_ph:["Phone number","Broj telefona"], ly_btn:["Join the club","Učlani se"],
-    ly_ok:["You're in. Your first stamp comes with your next burger.","Učlanjen si. Prvi pečat stiže uz sledeći burger."],
-    ly_err:["Enter your first name and a phone number with at least 6 digits.","Upiši ime i broj telefona sa bar 6 cifara."],
-    ly_card:["NIGHT OWL CARD, 3 OF 9 STAMPS","KARTICA NOĆNE PTICE, 3 OD 9 PEČATA"], ly_free:["FREE","GRATIS"],
 
     rs_eyebrow:["Save a seat","Sačuvaj mesto"], rs_head:["Book a table","Rezerviši sto"],
     rs_sub:["We take bookings from 20:00 to 02:00. For groups over 8, give us a call.","Primamo rezervacije od 20:00 do 02:00. Za grupe veće od 8 osoba pozovi nas telefonom."],
@@ -94,31 +67,6 @@ window.LASTEMBER_TEXT = (function(){
     e_monday:["We're closed on Mondays. Pick another day.","Ponedeljkom smo zatvoreni. Izaberi drugi dan."],
     e_email:["Enter an email address like name@example.com.","Upiši email adresu, na primer ime@primer.rs."], e_msg:["Write at least a few words.","Napiši bar par reči."],
 
-    ev_eyebrow:["When there are more of you","Kad vas je više"], ev_head:["Parties, catering and gift cards","Proslave, katering i vaučeri"],
-    ev_sub:["We close the dining room for your group, or bring the grill and the crew to you.","Zatvaramo salu za tvoje društvo ili dolazimo kod tebe sa roštiljem i ekipom."],
-    ev1_h:["Parties and catering","Proslave i katering"],
-    ev1_p:["Birthdays, farewells, team nights and house parties. Tell us the headcount and the date, and we send a menu proposal within one day.","Rođendani, ispraćaji, timski izlasci i kućne žurke. Javi nam broj ljudi i datum, pa šaljemo predlog menija u roku od jednog dana."],
-    ev_l1:["Dining room for up to 40 people, booked 7 days ahead","Sala do 40 mesta, uz najavu 7 dana ranije"],
-    ev_l2:["Catering with a live grill at your address, from 20 people","Katering sa roštiljem na tvojoj adresi, od 20 osoba"],
-    ev_l3:["Fixed menu per person or pay per order","Fiksni meni po osobi ili plaćanje po porudžbini"],
-    ev_l4:["Meat-free and gluten-free options for the whole table","Opcije bez mesa i bez glutena za ceo sto"],
-    ev_btn:["Send an inquiry","Pošalji upit"],
-    ev2_h:["Gift card","Poklon vaučer"],
-    ev2_p:["For someone who likes to eat late. The gift card arrives by email, is valid for one year and works in the restaurant and for delivery.","Za nekoga ko voli da jede kasno. Vaučer stiže na email, važi godinu dana i troši se u lokalu ili na dostavi."],
-    ev2_note:["Add a gift card to your order like any dish. The code to redeem it arrives right after checkout.","Vaučer se dodaje u korpu kao i svako jelo. Kod za korišćenje stiže odmah posle porudžbine."],
-    v_unit:["dinars","dinara"], v_name:["Gift card {p}","Poklon vaučer {p}"],
-
-    jb_eyebrow:["Work with us","Radi sa nama"], jb_head:["We're hiring for the night shift","Tražimo ljude za noćnu smenu"],
-    jb_sub:["If you work better at night than in the morning, you're in the right place. Paid on time, a meal every shift, a ride home after 2 a.m.","Ako ti se bolje radi uveče nego ujutru, na pravom si mestu. Plata na vreme, obrok u smeni, prevoz kući posle dva ujutru."],
-    j1_t:["Grill cook","Kuvar na roštilju"], j1_d:["Grill experience helps, but we also train people who want to learn.","Iskustvo na roštilju je plus, ali učimo i one koji hoće da nauče."],
-    j2_t:["Server","Konobar"], j2_d:["A 40-seat dining room and a bar. We want someone who remembers faces and likes the night crowd.","Sala od 40 mesta i šank. Tražimo nekoga ko pamti lica i voli noćnu ekipu."],
-    j3_t:["Delivery driver","Vozač dostave"], j3_d:["Your own scooter or car. The delivery area is 4 km, and we cover fuel and upkeep.","Sopstveni skuter ili auto. Zona dostave je do 4 km, a gorivo i održavanje idu na nas."],
-    j_full:["Full time","Puno radno vreme"], j_fullpart:["Full or part time","Puno ili pola radnog vremena"], j_shifts:["4 to 6 shifts a week","4 do 6 smena nedeljno"],
-    j_free:["Freelance","Honorarno"], j_city:["Belgrade","Beograd"], j_h1:["20:00 to 03:30","20:00 do 03:30"], j_h3:["22:00 to 02:30","22:00 do 02:30"],
-    jb_btn:["Apply","Prijavi se"],
-
-    fq_head:["Questions we hear a lot","Česta pitanja"],
-
     ct_head:["Find us after dark","Nađi nas posle mraka"],
     ct_sub:["On the corner where the last traffic light goes off. Look for the gold flame above the door.","Na uglu gde se gasi poslednji semafor. Traži zlatni plamen iznad ulaza."],
     ct_hours:["Opening hours","Radno vreme"], ct_contact:["Contact","Kontakt"], copy:["Copy","Kopiraj"],
@@ -129,22 +77,17 @@ window.LASTEMBER_TEXT = (function(){
     z_near:["That's on the edge of our area. Call 011 555 0312 before ordering and we'll confirm your address.","Tu smo na ivici zone. Pozovi 011 555 0312 pre porudžbine da potvrdimo adresu."],
     z_no:["That's outside our 4 km area. Pickup at the restaurant still works until 02:45.","To je van naše zone od 4 km. Preuzimanje u lokalu radi do 02:45."],
     cf_head:["Send us a message","Pošalji nam poruku"],
-    cf_sub:["Questions, feedback, parties or a job application. We answer within one working day.","Pitanja, utisci, proslave ili prijava za posao. Odgovaramo u roku od jednog radnog dana."],
+    cf_sub:["Questions, feedback or a party for your group. We answer within one working day.","Pitanja, utisci ili proslava za tvoje društvo. Odgovaramo u roku od jednog radnog dana."],
     l_email:["Email","Email"], l_topic:["Topic","Tema"], l_msg:["Message","Poruka"],
     tp_general:["General question","Opšte pitanje"], tp_feedback:["Feedback on a visit","Utisak o poseti"], tp_event:["Party or catering","Proslava ili katering"],
-    tp_job:["Job application","Prijava za posao"], tp_lost:["Lost property","Izgubljene stvari"], tp_press:["Press","Mediji"],
+    tp_lost:["Lost property","Izgubljene stvari"],
     cf_btn:["Send message","Pošalji poruku"], cf_ok_h:["Message received","Poruka je stigla"], cf_again:["Write another message","Napiši novu poruku"],
     cf_ok_text:["Thanks, {n}. We'll reply to {e} within one working day, usually before midnight.","Hvala, {n}. Odgovaramo na {e} u roku od jednog radnog dana, obično pre ponoći."],
-    msg_job:["I'm applying for: {j}.\n\nA bit about me: ","Prijavljujem se za: {j}.\n\nUkratko o meni: "],
-    msg_event:["We're planning an event for about __ people on __ (date). We'd like: ","Planiramo proslavu za oko __ osoba, datum: __. Zanima nas: "],
     copied:["Copied: {x}","Kopirano: {x}"], copy_fail:["Copy didn't work here. The text is selected, so copy it by hand.","Kopiranje ne radi ovde. Tekst je označen, kopiraj ga ručno."],
 
     ft_tag:["When the lights go out, the last ember stays. Live fire, fresh beef, house sauces.","Kad se svetla pogase, poslednja žeravica ostaje. Živa vatra, sveže meso, kućni sosovi."],
     ft_nav:["Explore","Navigacija"], ft_legal:["Legal","Pravno"],
     lg_privacy:["Privacy policy","Politika privatnosti"], lg_terms:["Terms of use","Uslovi korišćenja"], lg_cookies:["Cookies","Kolačići"],
-    ft_news:["Night Mail","Noćna pošta"], ft_news_p:["Once a month: new burgers and secret deals.","Jednom mesečno: novi burgeri i tajne ponude."],
-    news_ph:["you@email.com","tvoj@email.rs"], news_btn:["Sign up","Prijavi se"],
-    news_ok:["Thanks! Your welcome code is NIGHT15: 15% off your next order.","Hvala! Tvoj kod dobrodošlice je NIGHT15: 15% popusta na sledeću porudžbinu."],
     ft_copy:["© 2026 Last Ember d.o.o., Belgrade. Tax ID 113456789.","© 2026 Last Ember doo, Beograd. PIB 113456789."],
     ft_demo:["Demo site: orders, bookings and messages are simulated.","Demo sajt: porudžbine, rezervacije i poruke su simulirane."],
     ft_made:["Made by Nikola Vojvodić","Napravio Nikola Vojvodić"],
@@ -190,9 +133,6 @@ window.LASTEMBER_TEXT = (function(){
 
     st_open:["Open till 03:00","Otvoreno do 03:00"], st_opens_h:["Opens in {h} h {m} min","Otvaramo za {h} h {m} min"], st_opens_m:["Opens in {m} min","Otvaramo za {m} min"],
 
-    ck_text:["We only use the cookies the order basket needs. If you agree, we also count visits so we know when to put another cook on the grill.","Koristimo samo kolačiće koje korpa mora da ima. Ako pristaneš, brojimo i posete, da znamo kada nam treba još jedan kuvar na roštilju."],
-    ck_only:["Essential only","Samo neophodni"], ck_all:["Accept all","Prihvati sve"],
-    ck_t1:["Only essential cookies, got it.","Samo neophodni kolačići, važi."], ck_t2:["Thanks, that helps us plan the shifts.","Hvala, to nam pomaže da planiramo smene."]
   };
 
   var DAYS = {
