@@ -147,6 +147,7 @@ window.LASTEMBER_TEXT = (function(){
     news_ok:["Thanks! Your welcome code is NIGHT15: 15% off your next order.","Hvala! Tvoj kod dobrodošlice je NIGHT15: 15% popusta na sledeću porudžbinu."],
     ft_copy:["© 2026 Last Ember d.o.o., Belgrade. Tax ID 113456789.","© 2026 Last Ember doo, Beograd. PIB 113456789."],
     ft_demo:["Demo site: orders, bookings and messages are simulated.","Demo sajt: porudžbine, rezervacije i poruke su simulirane."],
+    ft_made:["Made by Nikola Vojvodić","Napravio Nikola Vojvodić"],
     social_toast:["Social profiles go live with the real opening. This site is a demo.","Profili na mrežama kreću sa pravim otvaranjem. Ovaj sajt je demo."],
 
     cart_title:["Your order","Tvoja porudžbina"], cart_empty:["Your order is empty.<br>The grill is waiting.","Korpa je prazna.<br>Roštilj čeka tvoj izbor."],

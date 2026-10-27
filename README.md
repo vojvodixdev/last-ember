@@ -21,7 +21,8 @@ last-ember/
 │   ├── translations.js   every piece of text, in English and Serbian
 │   └── app.js            menu, cart, booking, forms, language switch, scroll animation
 └── assets/
-    └── favicon.svg       browser tab icon
+    ├── favicon.svg       browser tab icon
+    └── og.jpg            preview image when the link is shared
 ```
 
 ## How to run it
