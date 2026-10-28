@@ -1,3 +1,4 @@
+/* © 2026 Nikola Vojvodić · https://vojvodixdev.github.io/ · All rights reserved, see LICENSE. [nv:69e82a9324] */
 /* Last Ember: all site text in English and Serbian.
    Every entry is [english, serbian]. Edit the words here; the keys are used by
    data-i attributes in index.html and by t('key') calls in app.js. */
@@ -88,9 +89,9 @@ window.LASTEMBER_TEXT = (function(){
     ft_tag:["When the lights go out, the last ember stays. Live fire, fresh beef, house sauces.","Kad se svetla pogase, poslednja žeravica ostaje. Živa vatra, sveže meso, kućni sosovi."],
     ft_nav:["Explore","Navigacija"], ft_legal:["Legal","Pravno"],
     lg_privacy:["Privacy policy","Politika privatnosti"], lg_terms:["Terms of use","Uslovi korišćenja"], lg_cookies:["Cookies","Kolačići"],
-    ft_copy:["© 2026 Last Ember d.o.o., Belgrade. Tax ID 113456789.","© 2026 Last Ember doo, Beograd. PIB 113456789."],
+    ft_copy:["Last Ember is a fictional restaurant.","Last Ember je izmišljen restoran."],
     ft_demo:["Demo site: orders, bookings and messages are simulated.","Demo sajt: porudžbine, rezervacije i poruke su simulirane."],
-    ft_made:["Made by Nikola Vojvodić","Napravio Nikola Vojvodić"],
+    ft_made:["Made by Nikola Vojvodić · © 2026","Napravio Nikola Vojvodić · © 2026"],
     social_toast:["Social profiles go live with the real opening. This site is a demo.","Profili na mrežama kreću sa pravim otvaranjem. Ovaj sajt je demo."],
 
     cart_title:["Your order","Tvoja porudžbina"], cart_empty:["Your order is empty.<br>The grill is waiting.","Korpa je prazna.<br>Roštilj čeka tvoj izbor."],

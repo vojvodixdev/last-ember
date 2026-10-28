@@ -1,3 +1,4 @@
+/* © 2026 Nikola Vojvodić · https://vojvodixdev.github.io/ · All rights reserved, see LICENSE. [nv:69e82a9324] */
 /* Last Ember: site behaviour (menu, cart, booking, forms, language switch, scroll hero). */
 (function(){
   "use strict";
@@ -984,4 +985,18 @@
   renderAll();
   onScrollUi();
   statusTimer = setInterval(function(){ renderStatus(); }, 30000);
+})();
+
+/* Autorska prava: kad sajt radi na tuđem domenu, prikaže link ka originalu. Za sopstveni domen dodaj ga u HOMES. */
+(function () {
+  var HOMES = ["vojvodixdev.github.io", "localhost", "127.0.0.1", "[::1]", ""];
+  var host = location.hostname;
+  if (HOMES.indexOf(host) > -1 || /\.localhost$/.test(host)) return;
+  var link = document.createElement("a");
+  link.className = "nv-original";
+  link.href = "https://vojvodixdev.github.io/";
+  link.textContent = "Original work by Nikola Vojvodić";
+  link.setAttribute("data-nv", "nv:69e82a9324");
+  document.body.appendChild(link);
+  console.warn("This page is a copy of work by Nikola Vojvodić (© 2026, all rights reserved): https://vojvodixdev.github.io/ [nv:69e82a9324]");
 })();
